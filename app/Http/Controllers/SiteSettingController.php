@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sitesetting;
+use App\Type;
 class SiteSettingController extends Controller
 {
     /**
@@ -13,8 +14,9 @@ class SiteSettingController extends Controller
      */
     public function index()
     {
+        $types=Type::all();
         $sitesettings=Sitesetting::orderBy('id','Desc')->paginate(5);
-        return view('admin/sitesetting.index',compact('sitesettings'));
+        return view('admin/sitesetting.index',compact('sitesettings','types'));
     }
 
     /**
@@ -24,7 +26,8 @@ class SiteSettingController extends Controller
      */
     public function create()
     {
-        return view('admin/sitesetting.create');
+        $types=Type::all();
+        return view('admin/sitesetting.create',compact('types'));
     }
 
     /**
@@ -69,8 +72,9 @@ class SiteSettingController extends Controller
     public function edit($id)
     {
         // dd($id);
+        $types=Type::all();
         $sitesetting=Sitesetting::find($id);
-        return view('admin/sitesetting.edit',compact('sitesetting'));
+        return view('admin/sitesetting.edit',compact('sitesetting','types'));
     }
 
     /**

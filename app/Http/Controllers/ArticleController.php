@@ -129,7 +129,6 @@ class ArticleController extends Controller
 
     public function student($id)
     {
-
         $types=Type::all();
         $type=Type::find($id);
        return view('admin/article.create',compact('types','type'));
@@ -137,7 +136,6 @@ class ArticleController extends Controller
 
     public function showdata($id)
     {
-
         $types=Type::all();
         $articles=Article::where('type_id', $id)->get();
         return view('admin/article.index',compact('articles','types','id'));
