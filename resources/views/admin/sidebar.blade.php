@@ -26,6 +26,28 @@
                         </ul> --}}
                     </li>
 
+                    <li>
+                        <a href="#" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>
+                               Article
+                            </span></a>
+
+                    </li>
+
+
+                    <li>
+                        <a href="#" aria-expanded="true"><i class="fa fa-picture-o" aria-hidden="true"></i><span>
+                                Gallery
+                            </span></a>
+
+                    </li>
+
+                    <li>
+                        <a href="#" aria-expanded="true"><i class="fa fa-video-camera" aria-hidden="true"></i><span>
+                                video
+                            </span></a>
+
+                    </li>
+
                 </ul>
             </nav>
         </div>
