@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Type;
 class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $types=Type::all();
+
+        return view('admin.dashboard',compact('types'));
     }
 }

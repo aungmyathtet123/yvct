@@ -15,6 +15,7 @@
                             <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
                         </div>
                         <input type="text" class="form-control" name="name" value="{{ $sitesetting->name }}">
+                        <span class="text-danger">{{ $errors->first('name') }}</span>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12">
@@ -23,6 +24,7 @@
                             <span class="input-group-text" id="inputGroup-sizing-default" >Link</span>
                         </div>
                         <input type="text" class="form-control" name="link" value="{{ $sitesetting->value }}">
+                        <span class="text-danger">{{ $errors->first('link') }}</span>
                     </div>
                 </div>
 

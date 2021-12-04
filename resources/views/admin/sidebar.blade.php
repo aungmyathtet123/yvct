@@ -27,9 +27,24 @@
                     </li>
 
                     <li>
-                        <a href="#" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>
+                        <a href="{{ route('backend.article.index') }}" aria-expanded="true"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span>
                                Article
                             </span></a>
+                            <ul class="collapse">
+                                @foreach ($types as $type )
+                                <li><a href=" {{ route('backend.showdata',$type->id) }}">@if($type->id==1)
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    &nbsp;&nbsp;{{ $type->name }}</a></li>
+                                @elseif($type->id==2)
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                &nbsp;&nbsp;{{ $type->name }}</a></li>
+                                @else
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                &nbsp;&nbsp;{{ $type->name }}
+                            </a></li>
+                                @endif
+                                @endforeach
+                            </ul>
 
                     </li>
 
