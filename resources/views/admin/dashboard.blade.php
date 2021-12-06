@@ -41,9 +41,9 @@
 
 <body>
 
-    <!-- <div id="preloader">
+     <div id="preloader">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <div class="page-container">
         <!-- sidebar menu area start -->
@@ -107,6 +107,15 @@
 
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
+
+    <script src="{{ asset('assets/js/line-chart.js') }}"></script>
+    <!-- all pie chart -->
+    <script src="{{ asset('assets/js/pie-chart.js') }}"></script>
+    <!-- all bar chart -->
+
+
+    <!-- others plugins -->
+
 </body>
 
 </html>

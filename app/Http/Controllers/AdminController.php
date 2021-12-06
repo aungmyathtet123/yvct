@@ -10,6 +10,6 @@ class AdminController extends Controller
     {
         $types=Type::all();
 
-        return view('admin.dashboard',compact('types'));
+        return view('admin.home',compact('types'));
     }
 }

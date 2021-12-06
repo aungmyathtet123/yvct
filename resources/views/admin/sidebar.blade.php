@@ -9,14 +9,18 @@
             <nav>
                 <ul class="metismenu" id="menu">
 
-                    <li>
+                    <li class="@if (request()->is('admin/dashboard'))
+                        active
+                    @endif">
                         <a href="{{ route('backend.dashboard') }}" aria-expanded="true"><i class="fa fa-tachometer" aria-hidden="true"></i><span>
                                 Dashboard
                             </span></a>
 
                     </li>
 
-                    <li>
+                    <li class="@if (request()->is('admin/sitesetting'))
+                        active
+                    @endif">
                         <a href="{{ route('backend.sitesetting.index') }}" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>
                                 Site setting
                             </span></a>
@@ -26,13 +30,20 @@
                         </ul> --}}
                     </li>
 
-                    <li>
+                    <li class="@if (request()->is('admin/article*'))
+                        active
+                    @endif">
                         <a href="{{ route('backend.article.index') }}" aria-expanded="true"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span>
                                Article
                             </span></a>
                             <ul class="collapse">
                                 @foreach ($types as $type )
-                                <li><a href=" {{ route('backend.showdata',$type->id) }}">@if($type->id==1)
+                                @php
+                                    $aa="admin/article/showdata/{$type->id}";
+                                @endphp
+                                <li class="@if (request()->is($aa))
+                                    active
+                                @endif"><a href=" {{ route('backend.showdata',$type->id) }}">@if($type->id==1)
                                     <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                                     &nbsp;&nbsp;{{ $type->name }}</a></li>
                                 @elseif($type->id==2)

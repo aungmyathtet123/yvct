@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-Route::group(['prefix'=>'backends','as'=>'backend.'],function(){
+Route::group(['prefix'=>'admin','as'=>'backend.'],function(){
     Route::get('/dashboard','AdminController@index')->name('dashboard');
     Route::resource('/sitesetting','SiteSettingController');
     Route::resource('/article','ArticleController');
@@ -36,3 +36,4 @@ Route::group(['prefix'=>'backends','as'=>'backend.'],function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout');
