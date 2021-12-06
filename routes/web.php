@@ -26,6 +26,8 @@ Route::group(['prefix'=>'admin','as'=>'backend.'],function(){
     Route::get('/article/student/{id}','ArticleController@student')->name('article');
     Route::get('/article/showdata/{id}','ArticleController@showdata')->name('showdata');
     Route::resource('/type','TypeController');
+    Route::resource('/gallery','GalleryController');
+    Route::resource('/video','VideoController');
 
 
 
