@@ -50,7 +50,7 @@ class GalleryController extends Controller
         ]);
 
         $imageName =$request->image->getClientOriginalName();
-        $request->image->move(public_path('images'), $imageName);
+        $request->image->move(public_path('images/gallery'), $imageName);
         $galleries=new Gallery();
         $galleries->order_no=$request->order;
         $galleries->image=$imageName;
@@ -98,7 +98,7 @@ class GalleryController extends Controller
 
         if($request->hasFile('image')){
         $imageName = $request->image->getClientOriginalName();
-        $request->image->move(public_path('images'), $imageName);
+        $request->image->move(public_path('images/gallery'), $imageName);
         }
         // Update Data
         $galleries = Gallery::find($id);

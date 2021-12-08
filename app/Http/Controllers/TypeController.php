@@ -13,7 +13,9 @@ class TypeController extends Controller
      */
     public function index()
     {
-        return view('admin/type.create');
+        $types=Type::orderBy('id','Desc')->paginate(5);
+        return view('admin/type.index',compact('types'));
+
     }
 
     /**
@@ -23,7 +25,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        $types=Type::all();
+        return view('admin/type.create',compact('types'));
     }
 
     /**
@@ -36,12 +39,14 @@ class TypeController extends Controller
     {
         $request->validate([
             'name'=>'required',
+            'description'=>'required',
 
 
         ]);
 
         $type=new Type();
         $type->name=$request->name;
+        $type->description=$request->description;
         $type->save();
         return redirect()->back();
     }
@@ -67,7 +72,9 @@ class TypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $types=Type::all();
+        $type=Type::find($id);
+        return view('admin/type.edit',compact('type','types'));
     }
 
     /**
@@ -79,7 +86,19 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+
+        ]);
+
+        // Update Data
+        $type =Type::find($id);
+        $type->name = $request->name;
+        $type->description = $request->description;
+
+        $type->save();
+        return redirect()->route('backend.type.index');
     }
 
     /**
@@ -90,6 +109,8 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $type=Type::find($id);
+        $type->delete();
+        return redirect()->route('backend.type.index');
     }
 }

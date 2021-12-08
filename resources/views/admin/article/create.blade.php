@@ -9,7 +9,7 @@
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default"> Title</span>
+                        <span class="input-group-text" id="inputGroup-sizing-default"> Name</span>
                     </div>
                     <input type="text" class="form-control" name="title"><br>
                     <span class="text-danger">{{ $errors->first('title') }}</span>
@@ -28,7 +28,7 @@
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                        <span class="input-group-text" id="inputGroup-sizing-default">Subject or Description</span>
                     </div>
                     <input type="text" class="form-control" name="description"><br>
                     <span class="text-danger">{{ $errors->first('description') }}</span>

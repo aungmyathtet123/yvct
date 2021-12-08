@@ -15,6 +15,15 @@
                     <span class="text-danger">{{ $errors->first('name') }}</span>
                 </div>
             </div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                    </div>
+                    <textarea name="description"  class="form-control"></textarea>
+                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                </div>
+            </div>
 
 
             <div class="col-lg-8 col-md-8 col-sm-12">

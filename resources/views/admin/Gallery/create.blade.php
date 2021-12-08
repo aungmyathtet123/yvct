@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            {{-- <input type="hidden" class="form-control" name="type_id" value={{ $gallery->id }}> --}}
+
 
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="input-group mb-3  justify-content-center">

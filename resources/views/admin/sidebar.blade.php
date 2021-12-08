@@ -59,6 +59,15 @@
 
                     </li>
 
+                    <li class="@if(request()->is('admin/type'))
+                        active
+
+                    @endif">
+                        <a href="{{ route('backend.type.index') }}" aria-expanded="true"><i class="fa fa-picture-o" aria-hidden="true"></i><span>
+                                Type
+                            </span></a>
+
+                    </li>
 
                     <li class="@if(request()->is('admin/gallery'))
                         active
@@ -76,6 +85,15 @@
                     @endif">
                         <a href="{{ route('backend.video.index') }}" aria-expanded="true"><i class="fa fa-video-camera" aria-hidden="true"></i><span>
                                 video
+                            </span></a>
+
+                    </li>
+                    <li class="@if(request()->is('admin/about'))
+                        active
+
+                    @endif">
+                        <a href="{{ route('backend.about.index') }}" aria-expanded="true"><i class="fa fa-picture-o" aria-hidden="true"></i><span>
+                                About
                             </span></a>
 
                     </li>

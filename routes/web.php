@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FrontendController@index')->name('homepage');
 
-
-
-Route::group(['prefix'=>'admin','as'=>'backend.'],function(){
+Route::middleware('auth')->name('backend.')->prefix('admin')->group(function (){
     Route::get('/dashboard','AdminController@index')->name('dashboard');
     Route::resource('/sitesetting','SiteSettingController');
     Route::resource('/article','ArticleController');
@@ -28,14 +24,22 @@ Route::group(['prefix'=>'admin','as'=>'backend.'],function(){
     Route::resource('/type','TypeController');
     Route::resource('/gallery','GalleryController');
     Route::resource('/video','VideoController');
-
-
-
+    Route::resource('/about','AboutController');
 });
 
+Route::group(['prefix'=>'user','as'=>'frontend.'],function(){
 
+    Route::get('/about','FrontendController@about')->name('about');
+    Route::get('/contact','FrontendController@contact')->name('contact');
+    Route::get('/course','FrontendController@course')->name('course');
+    Route::get('/image','FrontendController@image')->name('image');
+    Route::get('/teacher','FrontendController@teacher')->name('teacher');
+
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', 'Auth\LoginController@logout');
+
+
