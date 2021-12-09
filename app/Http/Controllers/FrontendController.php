@@ -32,11 +32,11 @@ class FrontendController extends Controller
 
         return view('frontend.contact',compact('sitesettings'));
     }
-    public function course()
+    public function student()
     {
         $sitesettings=Sitesetting::all();
         $articles=Article::paginate(10);
-        return view('frontend.course',compact('sitesettings','articles'));
+        return view('frontend.student',compact('sitesettings','articles'));
     }
 
     public function image()

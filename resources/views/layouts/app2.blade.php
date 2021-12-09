@@ -12,7 +12,7 @@
     <title>YVCT - Yangon Vocational Collage Of Technology</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('frontend/images/logo.png') }}" type="image/png">
 
     <!--====== Slick css ======-->
     <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}">

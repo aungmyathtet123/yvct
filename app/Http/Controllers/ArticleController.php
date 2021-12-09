@@ -41,6 +41,8 @@ class ArticleController extends Controller
         // dd($request);
         $request->validate([
             'title'=>'required',
+            'ctitle'=>'required',
+            'mtitle'=>'required',
             'image'=>'image|mimes:jpeg,png,jpg,gif|required',
             'description'=>'required',
             'type_id'=>'required',
@@ -49,6 +51,8 @@ class ArticleController extends Controller
         $request->image->move(public_path('images'), $imageName);
         $article=new Article();
         $article->title=$request->title;
+        $article->ctitle=$request->ctitle;
+        $article->mtitle=$request->mtitle;
         $article->image=$imageName;
         $article->description=$request->description;
         $article->type_id=$request->type_id;
@@ -92,6 +96,8 @@ class ArticleController extends Controller
         // dd($request);
         $request->validate([
             'title'=>'required',
+            'ctitle'=>'required',
+            'mtitle'=>'required',
             'description'=>'required',
             'type_id'=>'required',
         ]);
@@ -102,6 +108,8 @@ class ArticleController extends Controller
        }
        $article=Article::find($id);
        $article->title=$request->title;
+       $article->ctitle=$request->ctitle;
+       $article->mtitle=$request->mtitle;
         if($request->hasFile('image')){
             File::delete($article->image);
             $article->image=$imageName;

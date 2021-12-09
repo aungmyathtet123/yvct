@@ -31,7 +31,7 @@ Route::group(['prefix'=>'user','as'=>'frontend.'],function(){
 
     Route::get('/about','FrontendController@about')->name('about');
     Route::get('/contact','FrontendController@contact')->name('contact');
-    Route::get('/course','FrontendController@course')->name('course');
+    Route::get('/student','FrontendController@student')->name('student');
     Route::get('/image','FrontendController@image')->name('image');
     Route::get('/teacher','FrontendController@teacher')->name('teacher');
 

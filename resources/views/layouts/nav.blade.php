@@ -41,28 +41,47 @@
 
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
+                                 <li class="">
                                 <li class="nav-item">
-                                    <a class="active" href="{{ route('homepage') }}">Home</a>
+                                    <a class="@if(request()->is('/'))
+                                        active
+
+                                    @endif" href="{{ route('homepage') }}">Home</a>
 
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('frontend.about') }}">About us</a>
+                                    <a class="@if(request()->is('user/about'))
+                                        active
+
+                                    @endif" href="{{ route('frontend.about') }}">About us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('frontend.course') }}">Student</a>
+                                    <a class="@if(request()->is('user/student'))
+                                        active
+
+                                    @endif" href="{{ route('frontend.student') }}">Student</a>
 
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('frontend.image') }}">Image</a>
+                                    <a   class="@if(request()->is('user/image'))
+                                        active
+
+                                    @endif" href="{{ route('frontend.image') }}">Image</a>
 
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('frontend.teacher') }}">Our teachers</a>
+                                    <a  class="@if(request()->is('user/teacher'))
+                                        active
+
+                                    @endif" href="{{ route('frontend.teacher') }}">Our teachers</a>
 
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('frontend.contact') }}">Contact</a>
+                                    <a class="@if(request()->is('user/contact'))
+                                        active
+
+                                    @endif" href="{{ route('frontend.contact') }}">Contact</a>
 
                                 </li>
                             </ul>

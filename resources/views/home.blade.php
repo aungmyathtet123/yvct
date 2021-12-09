@@ -287,8 +287,7 @@
                         <img src="{{asset( 'images/'.$article->image ) }}" alt="News">
                     </div>
                     <div class="news-cont">
-                       <h3>{{ $article->title }}</h3>
-                        <p>{{ $article->description }}</p>
+                        <p>{{ $article->type->description }}</p>
                     </div>
                 </div> <!-- singel news -->
             </div>
